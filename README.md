@@ -1,13 +1,13 @@
-#ML for VLSI Hotspot Detection: Ultra-High Recall Pipeline
+# ML for VLSI Hotspot Detection: Ultra-High Recall Pipeline
 
 An optimized Machine Learning pipeline designed to detect lithography hotspots in physical VLSI layouts using the ICCAD-2012 benchmark dataset.
 
-##The Engineering Problem
+## The Engineering Problem
 In semiconductor manufacturing, a **False Negative** (missing a hotspot) results in a defective mask layer, leading to catastrophic chip failure and millions of dollars in lost wafer costs. A **False Positive** (false alarm) simply requires a few extra seconds of localized DRC/DFM simulation. 
 
 Therefore, standard ML accuracy is a flawed metric for this domain. This pipeline abandons the default `0.5` classification threshold, utilizing probabilistic calibration to prioritize **manufacturing safety and ultra-high recall**.
 
-##Key Performance Metrics
+## Key Performance Metrics
 By shifting the decision threshold to `0.24`, the Random Forest classifier aggressively minimizes False Negatives while maintaining feature stability:
 * **AUC-ROC:** 0.941
 * **Hotspot Recall:** 90.1% (Caught 529 more critical defects than the baseline)
